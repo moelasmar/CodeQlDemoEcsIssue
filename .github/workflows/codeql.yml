@@ -56,6 +56,11 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
+        registries: |
+          # URL to the default container registry
+          - url: https://ghcr.io/v2/
+            packages: "*/*"
+            token: ${{ secrets.GITHUB_TOKEN }}
         packs:
           moelasmar/codeqldemocdkqueries
 
